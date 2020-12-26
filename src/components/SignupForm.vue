@@ -13,13 +13,29 @@
     </select>
 
     <div class="terms">
-      <input type="checkbox" required>
+      <input type="checkbox" v-model="terms" required>
       <label>Accept terms and conditions</label>
     </div>
+
+    <div>
+      <input type="checkbox" value="Bruce" v-model="names">
+      <label>Bruce</label>
+    </div>
+     <div>
+      <input type="checkbox" value="Bilbo" v-model="names">
+      <label>Bilbo</label>
+    </div>
+    <div>
+      <input type="checkbox" value="Frodo" v-model="names">
+      <label>Frodo</label>
+    </div>
+
   </form>
   <p>Email: {{ email }}</p>
   <p>Password: {{ password }}</p>
   <p>Role: {{ role }}</p>
+  <p>Terms accepted: {{ terms }}</p>
+  <p>Names: {{ names }}</p>
   
 </template>
 
@@ -29,7 +45,9 @@ export default {
     return {
       email: '',
       password: '',
-      role: ''
+      role: '',
+      terms: false,
+      names: []
     }
   }
 
